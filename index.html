@@ -4,9 +4,398 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-    <link rel="stylesheet" href="./style.css">
+    <!-- <link rel="stylesheet" href="./style.css"> -->
     <title>Portfolio</title>
     <link rel="shortcut icon" href="./profile-pic.png" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    
+    
+    
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    background: #62799f;
+    overflow: hidden;
+    /* #293241 */
+    /* #62799f */
+}
+
+.header{
+    width: 1400px;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1{
+    font-size: 25px;
+    color: #98c1d9;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.1em;
+}
+
+.logo span{
+    color: #e0fbfc;
+}
+
+.nav-links ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    gap: 50px;
+}
+
+.nav-links ul li a{
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: #e0fbfc;
+    transition: 0.4s;
+}
+
+.nav-links ul li a:hover{
+    color: #98c1d9;
+    font-size: 25px;
+}
+
+.btn{
+    padding: 10px 20px;
+    color: #e0fbfc;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    background: #3d5a80;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 2px 4px, 
+    rgba(0, 0, 0, 0.4) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    transition: 0.4s;
+    font-weight: 600;
+}
+
+.btn-primary{
+    margin-left: 100px;
+    color: #3d5a80;
+    background: #e0fbfc;
+}
+
+.btn:hover{
+    scale: 105%;
+    box-shadow: #62799f;
+    /* rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px */
+}
+
+.main-content{
+    width: 100%;
+    height: 100%;
+}
+
+.main{
+    position: relative;
+    width: 1400px;
+    height: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.line{
+    width: 80px;
+    border-bottom: 8px solid #ee6c4d;
+    margin-bottom: 30px;
+}
+
+.main h1{
+    text-transform: uppercase;
+    font-size: 50px;
+    color: #98c1d9;
+    line-height: 1;
+}
+
+.main h2{
+   font-size: 40px; 
+   color: #98c1d9;
+   margin-bottom: 50px;
+}
+
+.main span{
+    color: #ee6c4d;
+}
+
+.main p{
+    width: 800px;
+    font-size: 18px;
+    color: #e0fbfc;
+    margin-bottom: 30px;
+    letter-spacing: 0.05em;
+}
+
+.right{
+    /* position: relative; */
+}
+
+.image{
+    position: relative;
+    width: 500px;
+    height: 500px;
+    margin-top: 150px;
+    border-radius: 50%;
+    border: 50px solid #293241;
+    z-index: 8888;
+    animation: anim 3s linear infinite;
+    /* #293241 */
+}
+
+@keyframes anim{
+    0%{
+        top: 0;
+    }
+    50%{
+        top: -10px;
+    }
+    100%{
+        top: 0;
+    }
+}
+
+.image img{
+    margin-top: -79px;
+    margin-left: 5px;
+    width: 100%;
+    scale: 140%;
+}
+
+.social{
+    position: absolute;
+    bottom: 17%;
+    left: 14%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 50px;
+}
+
+.social i{
+    color: #3d5a80;
+    font-size: 30px;
+    transition: 0.4s;
+}
+
+.social i:hover{
+    color: #ee6c4d;
+    scale: 105%;
+}
+
+.social-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #e0fbfc;
+    border: 2px solid #3d5a80;
+    transition: 0.4s;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.social .social-link:hover{
+    border: 2px solid #ee6c4d;
+    scale: 105%;
+}
+
+
+/* portfolio styles */
+
+.portfolio-section {
+    width: 90%;
+    max-width: 1400px;
+    margin: 50px auto;
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    background-color: #62799f;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project {
+    width: calc(33.33% - 20px);
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    height: 750px;
+}
+
+.project img {
+    width: 100%;
+    height: 220px;
+    border-radius: 10px;
+}
+
+.project h3 {
+    font-size: 24px;
+    margin-top: 20px;
+    color: #333;
+}
+
+.project p {
+    color: #666;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.project-links {
+    margin-top: 20px;
+}
+
+.project-links a {
+    display: inline-block;
+    padding: 8px 20px;
+    margin-right: 10px;
+    background-color: #3d5a80;
+    color: #e0fbfc;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.project-links a:hover {
+    background-color: #ee6c4d;
+}
+/* Hide the scrollbars */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+/* Optional: Style for the scrollbar track (if you want to keep it visible) */
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Optional: Style for the scrollbar thumb (if you want to keep it visible) */
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+/* Optional: Style for the scrollbar corner (if you want to keep it visible) */
+html::-webkit-scrollbar-corner,
+body::-webkit-scrollbar-corner {
+    background: transparent;
+}
+.bottom-navigation {
+    background-color: #293241; /* Match the background color of the header */
+    padding: 20px 0;
+    text-align: center;
+}
+
+.bottom-navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.bottom-navigation ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.bottom-navigation ul li:last-child {
+    margin-right: 0;
+}
+
+.bottom-navigation ul li a {
+    color: #e0fbfc;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.bottom-navigation ul li a:hover {
+    color: #98c1d9;
+}
+.achievements-section {
+    width: 90%;
+    max-width: 1400px;
+    margin: 50px auto;
+    padding: 50px;
+    background-color:#62799f;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+.achievements-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.achievement-cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.achievement-card {
+    width: calc(30% - 20px);
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    height: 520px; 
+}
+
+.achievement-card img {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+   object-fit: cover;
+}
+
+.achievement-card h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.achievement-card p {
+    color: #666;
+    font-size: 16px;
+}
+
+
+
+
+
+    </style>
 </head>
 <body>
     <div class="container">
@@ -19,6 +408,7 @@
                     <li><a href="#">Home</a></li>
                     <!-- <li><a href="#">About</a></li> -->
                     <li><a href="#portfolio-section">Portfolio</a></li>
+                    <li><a href="#achievements-section">Achievements</a></li>
                  
                 </ul>
             </div>
@@ -33,7 +423,8 @@
                     <p>Enthisiastic & skilled web developer with expertise in HTML, CSS, JavaScript, MYSQL & PHP.
                          Seeking a dynamic role to contribute to innovative web development 
                          projects & further enhance my skills in collaborative environment.</p>
-                    <a href="portfolio.html" class="btn">Browse Portfolio</a>
+                         <a href="#portfolio-section" class="btn">View Projects</a>
+
                     <a href="./Aditya Revankar Resume.pdf" target="_blank" class="btn btn-primary">Download CV</a>
                 </div>
                 <div class="right">
@@ -61,8 +452,33 @@
             </div>
         </div>
     </div>
+    <section class="achievements-section" id="achievements-section">
+        <h2>Achievements</h2>
+        <div class="achievement-cards">
+            <div class="achievement-card">
+                <img src="aditya.jpg" alt="Achievement 1"> 
+                <h3>Won Best Project Award</h3>
+                <p>My team was awarded with first prize i the project showcase event in which we had created a python project on encryption and decryption and i was the team lead.</p>
+                <!-- <h3>Performer Of The Month </h3>
+                <p>I was awarded as the performer of the month for the month July in CPIT Dharwad</p> -->
+            </div>
+            <div class="achievement-card">
+                <img src="aditya2.jpg" alt="Achievement 2">
+                <h3>Performer Of The Month </h3>
+                <p>I was awarded as the performer of the month for the month June in CPIT Dharwad</p>
+            </div>
+            <div class="achievement-card">
+                <img src="aditya3.jpg" alt="Achievement 3">
+                
+                <h3>Selected For Internship</h3>
+                <p>I was one of the first to get placed for the internship from our batch and the company was KAlPAS Innovations PVT LTD.</p>
+                
+            </div>
+        </div>
+    </section>
+    
        
-    <section class="portfolio-section" id="portfolio-section">
+    <section id="portfolio-section" class="portfolio-section">
         <div class="project">
             <img src="project1.png" alt="Project 1">
             <h3>Maze Explorer</h3>
@@ -73,7 +489,7 @@
                 <p> <b>Description :</b> Developed a maze exploration game specifically
                  designed to enhance analytical skills in a captivating manner,
                  addressing the concern that many contemporary games lack
-                 meaningful problem-solving elements, lead by me.</p>
+                 meaningful problem-solving elements, lead by me.</p><br><br>
     </p>
     <div class="project-links">
         <a href=" https://adityarevankardwd.github.io/MazeExp/" target="_blank">View Project</a>
@@ -109,7 +525,7 @@
             <p><b>Description:</b> Developed a secure encryption and decryption 
                 application to protect sensitive data from unauthorized access. Utilizing advanced 
                 cryptographic algorithms, the application ensures confidentiality and integrity of information, 
-                offering users peace of mind in their digital communications.</p>
+                offering users peace of mind in their digital communications.</p><br>
 
     </p>
             <div class="project-links">
@@ -126,7 +542,7 @@
                 <a href="https://www.linkedin.com/in/adityarevankar98456 "target =_blank><i class="fa-brands fa-linkedin"></i></a>
             </div>
             <div class="social-link">
-                <a href="https://twitter.com/AdityaRevankar4"target =_blank><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://twitter.com/AdityaRevanakar"target =_blank><i class="fa-brands fa-twitter"></i></a>
             </div>
             <div class="social-link">
                 <a href="https://t.me/INDWHITEDEVIL"target =_blank><i class="fa-brands fa-telegram"></i></a>
@@ -135,7 +551,19 @@
                 <a href="https://github.com/AdityaRevankarDWD "target =_blank><i class="fa-brands fa-github"></i></a>
             </div>
         </div>
+      
     </section>
+      <!-- Bottom navigation -->
+      <footer class="bottom-navigation">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#portfolio-section">Portfolio</a></li>
+            <li><a href="#achievements-section">Achievements</a></li>
+           <li> <p style="color: #fff;">Copyright &copy; 2024 <NAME> </p></li>
+            <!-- Add more navigation items as needed -->
+        </ul>
+        
+    </footer>
 
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 
@@ -147,5 +575,23 @@
             loop:true
         })
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Smooth scrolling for all navigation links
+            var navLinks = document.querySelectorAll('.nav-links ul li a, .btn[href="#portfolio-section"], .btn[href="#achievements-section"]');
+            navLinks.forEach(function(navLink) {
+                navLink.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    var targetSectionId = this.getAttribute('href');
+                    document.querySelector(targetSectionId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+    
+    
+    
 </body>
 </html>

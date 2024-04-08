@@ -12,8 +12,9 @@
 .container{
     height: 100vh;
     width: 100vw;
-    background: #293241;
+    background: #62799f;
     overflow: hidden;
+    /* #293241 */
 }
 
 .header{
@@ -82,7 +83,8 @@
 
 .btn:hover{
     scale: 105%;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    box-shadow: #62799f;
+    /* rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px */
 }
 
 .main-content{
@@ -141,9 +143,10 @@
     height: 500px;
     margin-top: 150px;
     border-radius: 50%;
-    border: 50px solid  #293241;
+    border: 50px solid #293241;
     z-index: 8888;
     animation: anim 3s linear infinite;
+    /* #293241 */
 }
 
 @keyframes anim{
@@ -216,7 +219,8 @@
     justify-content: space-between;
     align-items: flex-start; /* Align items to the top */
     flex-wrap: wrap;
-    /* background-color: #f3f3f3; Change to the desired background color */
+    background-color: #2f5176; 
+    /* Change to the desired background color  */
 }
 
 
