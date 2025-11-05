@@ -1,638 +1,453 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-    <!-- <link rel="stylesheet" href="./style.css"> -->
-    <title>Portfolio</title>
-    <link rel="shortcut icon" href="./profile-pic.png" type="image/x-icon">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aditya Revankar | Portfolio</title>
+  <meta name="description" content="Aditya Revankar — Web developer (HTML, CSS, JavaScript, MySQL, PHP). Projects, achievements, and contact." />
+  <meta name="theme-color" content="#293241" />
+  <link rel="shortcut icon" href="./profile-pic.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    
-    
-    
-}
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-.container{
-    height: 100vh;
-    width: 100vw;
-    background: #62799f;
-    overflow: hidden;
-    /* #293241 */
-    /* #62799f */
-}
-
-.header{
-    width: 1400px;
-    height: 80px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo h1{
-    font-size: 25px;
-    color: #98c1d9;
-    font-weight: 600;
-    cursor: pointer;
-    letter-spacing: 0.1em;
-}
-
-.logo span{
-    color: #e0fbfc;
-}
-
-.nav-links ul{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style-type: none;
-    gap: 50px;
-}
-
-.nav-links ul li a{
-    font-size: 20px;
-    text-decoration: none;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    color: #e0fbfc;
-    transition: 0.4s;
-}
-
-.nav-links ul li a:hover{
-    color: #98c1d9;
-    font-size: 25px;
-}
-
-.btn{
-    padding: 10px 20px;
-    color: #e0fbfc;
-    cursor: pointer;
-    display: inline-block;
-    text-decoration: none;
-    background: #3d5a80;
-    border-radius: 30px;
-    box-shadow: rgba(0, 0, 0, 0.6) 0px 2px 4px, 
-    rgba(0, 0, 0, 0.4) 0px 7px 13px -3px,
-    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-    transition: 0.4s;
-    font-weight: 600;
-}
-
-.btn-primary{
-    margin-left: 100px;
-    color: #3d5a80;
-    background: #e0fbfc;
-}
-
-.btn:hover{
-    scale: 105%;
-    box-shadow: #62799f;
-    /* rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px */
-}
-
-.main-content{
-    width: 100%;
-    height: 100%;
-}
-
-.main{
-    position: relative;
-    width: 1400px;
-    height: 80%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.line{
-    width: 80px;
-    border-bottom: 8px solid #ee6c4d;
-    margin-bottom: 30px;
-}
-
-.main h1{
-    text-transform: uppercase;
-    font-size: 50px;
-    color: #98c1d9;
-    line-height: 1;
-}
-
-.main h2{
-   font-size: 40px; 
-   color: #98c1d9;
-   margin-bottom: 50px;
-}
-
-.main span{
-    color: #ee6c4d;
-}
-
-.main p{
-    width: 800px;
-    font-size: 18px;
-    color: #e0fbfc;
-    margin-bottom: 30px;
-    letter-spacing: 0.05em;
-}
-
-.right{
-    /* position: relative; */
-}
-
-.image{
-    position: relative;
-    width: 500px;
-    height: 500px;
-    margin-top: 150px;
-    border-radius: 50%;
-    border: 50px solid #293241;
-    z-index: 8888;
-    animation: anim 3s linear infinite;
-    /* #293241 */
-}
-
-@keyframes anim{
-    0%{
-        top: 0;
+    :root{
+      --bg:#62799f;
+      --ink:#e0fbfc;
+      --ink-2:#98c1d9;
+      --brand:#ee6c4d;
+      --card:#ffffff;
+      --primary:#3d5a80;
+      --header:#293241;
+      --muted:#666;
+      --shadow: rgba(0,0,0,.14) 0 10px 24px -6px;
     }
-    50%{
-        top: -10px;
+
+    *{ box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
+      margin:0;
+      font-family:'Poppins',sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      text-rendering: optimizeLegibility;
+      overflow-x: hidden;
     }
-    100%{
-        top: 0;
+
+    .wrap{ width:min(1200px, 92%); margin-inline:auto; }
+
+    header.header{ background: var(--header); position: sticky; top:0; z-index: 100; }
+    .nav{
+      height: 68px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
     }
-}
+    .logo h1{
+      margin:0;
+      font-size: 22px;
+      letter-spacing:.08em;
+      color: var(--ink-2);
+      white-space: nowrap;
+    }
+    .logo span{ color: var(--ink); }
 
-.image img{
-    margin-top: -79px;
-    margin-left: 5px;
-    width: 100%;
-    scale: 140%;
-}
+    .nav-links{ display:flex; }
+    .nav-links ul{
+      display:flex; align-items:center; gap:28px;
+      list-style:none; margin:0; padding:0;
+    }
+    .nav-links a{
+      color: var(--ink); text-decoration:none; font-weight:500; font-size:16px;
+      transition: opacity .2s ease, transform .2s ease;
+    }
+    .nav-links a:hover{ opacity:.9; transform: translateY(-1px); }
 
-.social{
-    position: absolute;
-    bottom: 17%;
-    left: 14%;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    gap: 50px;
-}
+    .btn{
+      padding:10px 16px; border-radius: 999px; text-decoration:none;
+      background: var(--primary); color: var(--ink); font-weight:600;
+      display:inline-flex; align-items:center; gap:8px; box-shadow: var(--shadow);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .btn:hover{ transform: translateY(-1px) scale(1.02); }
+    .btn-primary{ background: var(--ink); color: var(--primary); }
 
-.social i{
-    color: #3d5a80;
-    font-size: 30px;
-    transition: 0.4s;
-}
+    .nav-toggle{
+      display:none;
+      background:transparent; border:none; color:var(--ink);
+      width:44px; height:44px; border-radius:8px;
+    }
+    .nav-toggle .bar{
+      display:block; width:22px; height:2px; background:var(--ink); margin:5px auto; transition:.2s;
+    }
+    .nav-toggle[aria-expanded="true"] .bar:nth-child(1){ transform: translateY(7px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] .bar:nth-child(2){ opacity:0; }
+    .nav-toggle[aria-expanded="true"] .bar:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
 
-.social i:hover{
-    color: #ee6c4d;
-    scale: 105%;
-}
+    .mobile-drawer{
+      position: fixed; inset: 68px 0 auto 0;
+      background: var(--header);
+      transform: translateY(-12px);
+      opacity:0; pointer-events:none;
+      transition: transform .22s ease, opacity .22s ease;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .mobile-drawer.open{ opacity:1; pointer-events:auto; transform: translateY(0); }
+    .mobile-drawer .menu{
+      display:flex; flex-direction:column; gap:4px; padding:10px 16px;
+    }
+    .mobile-drawer a{
+      color: var(--ink); text-decoration:none; font-weight:600; padding:12px 10px;
+      border-radius:10px;
+    }
 
-.social-link{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: #e0fbfc;
-    border: 2px solid #3d5a80;
-    transition: 0.4s;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-}
+    .main{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items:center;
+      min-height: clamp(520px, 70vh, 760px);
+      padding-block: 28px;
+    }
+    .line{ width:82px; border-bottom:8px solid var(--brand); margin-bottom: 16px; }
+    .main h1{
+      margin:0 0 8px;
+      font-size: clamp(26px, 4.3vw, 48px); color: var(--ink-2); line-height:1.15;
+    }
+    .main h2{
+      margin:0 0 18px; font-size: clamp(20px, 3.2vw, 38px); color: var(--ink-2);
+    }
+    .main p{
+      margin:0 0 20px; font-size: 16.5px; max-width: 60ch; letter-spacing:.01em;
+    }
 
-.social .social-link:hover{
-    border: 2px solid #ee6c4d;
-    scale: 105%;
-}
+    .right{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
 
+    .image{
+      margin-inline:auto;
+      aspect-ratio: 1 / 1;
+      overflow:hidden;
+      border-radius:50%;
+      border:30px solid #293241;
+      box-shadow: var(--shadow);
+      animation: floaty 6s ease-in-out infinite;
+    }
+    .image img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      object-position: center;
+      transform: none !important;
+    }
 
-/* portfolio styles */
+    @keyframes floaty { 0%{transform: translateY(0);} 50%{transform: translateY(-8px);} 100%{transform: translateY(0);} }
 
-.portfolio-section {
-    width: 90%;
-    max-width: 1400px;
-    margin: 50px auto;
-    padding: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    background-color: #62799f;
-    border-radius: 10px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-}
+    .social{
+      display:flex; gap:14px; flex-wrap:wrap; margin-top: 18px;
+    }
+    .social-link{
+      width:48px; height:48px; display:grid; place-items:center;
+      border-radius:50%; background: var(--ink); border:2px solid var(--primary);
+      box-shadow: rgba(0,0,0,.12) 0 6px 14px; transition: transform .15s ease, border-color .15s ease;
+    }
+    .social-link:hover{ transform: translateY(-2px) scale(1.03); border-color: var(--brand); }
+    .social i{ color: var(--primary); font-size: 20px; }
 
-.project {
-    width: calc(33.33% - 20px);
-    margin-bottom: 40px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    height: 750px;
-}
+    section { scroll-margin-top: 80px; }
 
-.project img {
-    width: 100%;
-    height: 220px;
-    border-radius: 10px;
-}
+    .achievements-section{ padding: 34px 0 8px; }
+    .achievements-section h2{
+      text-align:center; margin:0 0 18px; font-size: clamp(20px, 2.4vw, 30px);
+    }
+    .achievement-cards{
+      display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+    }
+    .achievement-card{
+      background:#f5f5f5; color:#222; border-radius:12px; box-shadow: var(--shadow);
+      padding:14px; display:flex; flex-direction:column;
+    }
+    .achievement-card img{
+      width:100%; height:240px; object-fit:cover; border-radius:10px; margin-bottom:12px;
+    }
+    .achievement-card h3{ margin: 2px 0 6px; font-size: 18px; color:#333; }
+    .achievement-card p{ margin:0; color:#555; font-size: 15px; }
 
-.project h3 {
-    font-size: 24px;
-    margin-top: 20px;
-    color: #333;
-}
+    .portfolio-section{ padding: 34px 0 22px; }
+    .portfolio-section h2{ text-align:center; margin:0 0 16px; font-size: clamp(20px, 2.4vw, 30px); }
+    .grid{
+      display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+    }
+    .project{
+      background: var(--card); border-radius:12px; box-shadow: var(--shadow);
+      padding: 14px; display:flex; flex-direction:column;
+    }
+    .project img{ width:100%; height:210px; object-fit:cover; border-radius:10px; }
+    .project h3{ font-size: 19px; margin:12px 0 6px; color:#333; }
+    .project p{ color: var(--muted); font-size: 15px; margin: 4px 0; }
+    .project .bullets p{ margin: 4px 0; }
+    .project-links{ margin-top:10px; display:flex; flex-wrap:wrap; gap:10px; }
+    .project-links a{
+      padding:8px 14px; border-radius:999px; text-decoration:none; font-weight:600;
+      background: var(--primary); color: var(--ink);
+      transition: opacity .2s ease, transform .2s ease;
+    }
+    .project-links a:hover{ opacity:.95; transform: translateY(-1px); }
 
-.project p {
-    color: #666;
-    margin-top: 10px;
-    font-size: 16px;
-}
+    #contact{ padding: 24px 0 42px; }
 
-.project-links {
-    margin-top: 20px;
-}
+    footer.bottom-navigation{ background: var(--header); padding: 16px 0; }
+    .bottom-navigation ul{
+      list-style:none; display:flex; gap:18px; flex-wrap:wrap; justify-content:center; align-items:center;
+      margin:0; padding:0;
+    }
+    .bottom-navigation a{ color: var(--ink); text-decoration:none; font-weight:500; }
+    .bottom-navigation a:hover{ color: var(--ink-2); }
 
-.project-links a {
-    display: inline-block;
-    padding: 8px 20px;
-    margin-right: 10px;
-    background-color: #3d5a80;
-    color: #e0fbfc;
-    text-decoration: none;
-    border-radius: 20px;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-}
+    @media (max-width: 1024px){
+      .main{ grid-template-columns: 1fr; }
+      .achievement-cards, .grid{ grid-template-columns: repeat(2, 1fr); }
+    }
 
-.project-links a:hover {
-    background-color: #ee6c4d;
-}
-/* Hide the scrollbars */
-html::-webkit-scrollbar,
-body::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-}
+    @media (max-width: 768px){
+      .nav-toggle{ display:block; }
+      .nav-links{ display:none; }
+      .image{ border-width:20px; width:min(300px, 86vw); animation:none !important; }
+      .main h1{ font-size: clamp(26px, 6.2vw, 34px); }
+      .main h2{ font-size: clamp(20px, 5.2vw, 28px); }
+      .main p { font-size: 15.5px; }
+      .achievement-cards, .grid{ grid-template-columns: 1fr; }
+      .achievement-card img{ height: 220px; }
+      .project img{ height: 200px; }
+    }
 
-/* Optional: Style for the scrollbar track (if you want to keep it visible) */
-html::-webkit-scrollbar-track,
-body::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-/* Optional: Style for the scrollbar thumb (if you want to keep it visible) */
-html::-webkit-scrollbar-thumb,
-body::-webkit-scrollbar-thumb {
-    background: transparent;
-}
-
-/* Optional: Style for the scrollbar corner (if you want to keep it visible) */
-html::-webkit-scrollbar-corner,
-body::-webkit-scrollbar-corner {
-    background: transparent;
-}
-.bottom-navigation {
-    background-color: #293241; /* Match the background color of the header */
-    padding: 20px 0;
-    text-align: center;
-}
-
-.bottom-navigation ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.bottom-navigation ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-.bottom-navigation ul li:last-child {
-    margin-right: 0;
-}
-
-.bottom-navigation ul li a {
-    color: #e0fbfc;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.bottom-navigation ul li a:hover {
-    color: #98c1d9;
-}
-.achievements-section {
-    width: 90%;
-    max-width: 1400px;
-    margin: 50px auto;
-    padding: 50px;
-    background-color:#62799f;
-    border-radius: 10px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-}
-
-.achievements-section h2 {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.achievement-cards {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-}
-
-.achievement-card {
-    width: calc(30% - 20px);
-    margin-bottom: 40px;
-    padding: 20px;
-    background-color: #f5f5f5;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    height: 520px; 
-}
-
-.achievement-card img {
-    width: 100%;
-    height: 300px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-   object-fit: cover;
-}
-
-.achievement-card h3 {
-    font-size: 20px;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.achievement-card p {
-    color: #666;
-    font-size: 16px;
-}
- /* Mobile Styles */
- @media only screen and (max-width: 768px) {
-            .header {
-                width: 90%;
-            }
-            .logo h1 {
-                font-size: 20px;
-            }
-            .nav-links ul {
-                gap: 30px;
-            }
-            .btn {
-                font-size: 16px;
-            }
-            .main {
-                flex-direction: column;
-                text-align: center;
-            }
-            .image {
-                margin-top: 50px;
-                margin-bottom: 50px;
-            }
-            .social {
-                bottom: 10%;
-                left: 50%;
-                transform: translateX(-50%);
-                flex-wrap: wrap;
-            }
-            .social-link {
-                margin: 10px;
-            }
-            .portfolio-section, .achievements-section {
-                padding: 30px;
-            }
-            .project {
-                width: 100%;
-            }
-            .achievement-card {
-                width: 100%;
-            }
-        }
-
-
-
-
-
-    </style>
+    @media (max-width: 420px){
+      .image{ width: min(280px, 84vw); border-width:18px; }
+      .social-link{ width:44px; height:44px; }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <div class="logo">
-                <h1>Aditya<span>Revankar</span></h1>
-            </div>
-            <div class="nav-links">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <!-- <li><a href="#">About</a></li> -->
-                    <li><a href="#portfolio-section">Portfolio</a></li>
-                    <li><a href="#achievements-section">Achievements</a></li>
-                 
-                </ul>
-            </div>
-            <a href="" class="btn">Contact</a>
-        </header>
-        <div class="main-content">
-            <div class="main">
-                <div class="left">
-                    <div class="line"></div>
-                    <h1>I'M Aditya Revankar</h1>
-                    <h2>A <span class="auto-type"></span> </h2>
-                    <p>Enthisiastic & skilled web developer with expertise in HTML, CSS, JavaScript, MYSQL & PHP.
-                         Seeking a dynamic role to contribute to innovative web development 
-                         projects & further enhance my skills in collaborative environment.</p>
-                         <a href="#portfolio-section" class="btn">View Projects</a>
+  <a href="#portfolio-section" class="btn btn-primary"
+     style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;"
+     onfocus="this.style.position='fixed';this.style.left='12px';this.style.top='12px';this.style.width='auto';this.style.height='auto'">
+     Skip to projects
+  </a>
 
-                    <a href="./Aditya Revankar Resume.pdf" target="_blank" class="btn btn-primary">Download CV</a>
-                </div>
-                <div class="right">
-                    <div class="image">
-                        <img src="./profile-pic.png" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="social">
-                <div class="social-link">
-                   <a href="https://www.instagram.com/mr_adii_03_official/ "target =_blank><i class="fa-brands fa-instagram"></i></a>
-                </div>
-                <div class="social-link">
-                    <a href="https://www.linkedin.com/in/adityarevankar98456 "target =_blank><i class="fa-brands fa-linkedin"></i></a>
-                </div>
-                <div class="social-link">
-                    <a href="https://twitter.com/AdityaRevankar4"target =_blank><i class="fa-brands fa-twitter"></i></a>
-                </div>
-                <div class="social-link">
-                    <a href="https://t.me/INDWHITEDEVIL"target =_blank><i class="fa-brands fa-telegram"></i></a>
-                </div>
-                <div class="social-link">
-                    <a href="https://github.com/AdityaRevankarDWD "target =_blank><i class="fa-brands fa-github"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <section class="achievements-section" id="achievements-section">
-        <h2>Achievements</h2>
-        <div class="achievement-cards">
-            <div class="achievement-card">
-                <img src="aditya.jpg" alt="Achievement 1"> 
-                <h3>Won Best Project Award</h3>
-                <p>My team was awarded with first prize i the project showcase event in which we had created a python project on encryption and decryption and i was the team lead.</p>
-                <!-- <h3>Performer Of The Month </h3>
-                <p>I was awarded as the performer of the month for the month July in CPIT Dharwad</p> -->
-            </div>
-            <div class="achievement-card">
-                <img src="aditya2.jpg" alt="Achievement 2">
-                <h3>Performer Of The Month </h3>
-                <p>I was awarded as the performer of the month for the month June in CPIT Dharwad</p>
-            </div>
-            <div class="achievement-card">
-                <img src="aditya3.jpg" alt="Achievement 3">
-                
-                <h3>Selected For Internship</h3>
-                <p>I was one of the first to get placed for the internship from our batch and the company was KAlPAS Innovations PVT LTD.</p>
-                
-            </div>
-        </div>
-    </section>
-    
-       
-    <section id="portfolio-section" class="portfolio-section">
-        <div class="project">
-            <img src="project1.png" alt="Project 1">
-            <h3>Maze Explorer</h3>
-            <p>  <b>Project Name :</b> Maze Exploration Game </p>
-                <p><b>Team :</b> 4 members</p>
-                <p><b>Duration :</b> 1 Month</p>
-                <p> <b>Technologies Used </b>: HTML CSS JavaScript API</p>
-                <p> <b>Description :</b> Developed a maze exploration game specifically
-                 designed to enhance analytical skills in a captivating manner,
-                 addressing the concern that many contemporary games lack
-                 meaningful problem-solving elements, lead by me.</p><br><br>
-    </p>
-    <div class="project-links">
-        <a href=" https://adityarevankardwd.github.io/MazeExp/" target="_blank">View Project</a>
-        <a href="https://github.com/AdityaRevankarDWD/MazeExp.git   " target="_blank">GitHub</a>
-    </div>
-            
-        </div>
-        <div class="project">
-            <img src="project2.png" alt="Project 1">
-            <h3>Maxx Programming</h3>
-            <p>  <b>Project Name :</b> Maxx Programming </p>
-                <p><b>Team :</b> 4 members</p>
-                <p><b>Duration :</b> 15 Days</p>
-                <p> <b>Technologies Used </b>: HTML CSS JavaScript </p>
-                <p><b>Description:</b> Developed a programming-themed website aimed at providing
-                     valuable insights into various programming concepts and languages.
-                      The website serves as an educational resource for beginners and enthusiasts, 
-                      offering tutorials, articles, and interactive content to enhance learning experiences.</p>
-
-    </p><div class="project-links">
-        <a href="https://adityarevankardwd.github.io/MaxxProgramming/" target="_blank">View Project</a>
-        <a href="https://github.com/AdityaRevankarDWD/MaxxProgramming.git" target="_blank">GitHub</a>
-    </div>
-            
-        </div>
-        <div class="project">
-            <img src="encrypt.png" alt="Project 1">
-            <h3>Encryption And Decryption</h3>
-            <p>  <b>Project Name :</b>Encryption And Decryption  </p>
-            <p><b>Team :</b> 5 members</p>
-            <p><b>Duration :</b> 10 Days</p>
-            <p> <b>Technologies Used </b>: PYTHON</p>
-            <p><b>Description:</b> Developed a secure encryption and decryption 
-                application to protect sensitive data from unauthorized access. Utilizing advanced 
-                cryptographic algorithms, the application ensures confidentiality and integrity of information, 
-                offering users peace of mind in their digital communications.</p><br>
-
-    </p>
-            <div class="project-links">
-                <!-- <a href="#">View Project</a> -->
-                <a href="https://github.com/AdityaRevankarDWD/Python.git" target="_blank">GitHub</a>
-            </div>
-        </div>
-        
-        <div class="social">
-            <div class="social-link">
-               <a href="https://www.instagram.com/mr_adii_03_official/ "target =_blank><i class="fa-brands fa-instagram"></i></a>
-            </div>
-            <div class="social-link">
-                <a href="https://www.linkedin.com/in/adityarevankar98456 "target =_blank><i class="fa-brands fa-linkedin"></i></a>
-            </div>
-            <div class="social-link">
-                <a href="https://twitter.com/AdityaRevanakar"target =_blank><i class="fa-brands fa-twitter"></i></a>
-            </div>
-            <div class="social-link">
-                <a href="https://t.me/INDWHITEDEVIL"target =_blank><i class="fa-brands fa-telegram"></i></a>
-            </div>
-            <div class="social-link">
-                <a href="https://github.com/AdityaRevankarDWD "target =_blank><i class="fa-brands fa-github"></i></a>
-            </div>
-        </div>
-      
-    </section>
-      <!-- Bottom navigation -->
-      <footer class="bottom-navigation">
+  <header class="header">
+    <nav class="nav wrap">
+      <div class="logo"><h1>Aditya<span>Revankar</span></h1></div>
+      <div class="nav-links" id="desktop-nav">
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#portfolio-section">Portfolio</a></li>
-            <li><a href="#achievements-section">Achievements</a></li>
-           <li> <p style="color: #fff;">Copyright &copy; 2024 <NAME> </p></li>
-            <!-- Add more navigation items as needed -->
+          <li><a href="#">Home</a></li>
+          <li><a href="#portfolio-section">Portfolio</a></li>
+          <li><a href="#achievements-section">Achievements</a></li>
         </ul>
-        
-    </footer>
+      </div>
+      <a href="#contact" class="btn"><i class="fa-solid fa-envelope"></i> Contact</a>
+      <button class="nav-toggle" id="navToggle" aria-controls="mobileMenu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </nav>
+    <div class="mobile-drawer" id="mobileMenu">
+      <div class="menu wrap">
+        <a href="#" data-nav-close>Home</a>
+        <a href="#portfolio-section" data-nav-close>Portfolio</a>
+        <a href="#achievements-section" data-nav-close>Achievements</a>
+        <a href="#contact" data-nav-close>Contact</a>
+      </div>
+    </div>
+  </header>
 
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+  <main class="wrap">
+    <section class="main" id="home">
+      <div class="left">
+        <div class="line"></div>
+        <h1>I’m Aditya Revankar</h1>
+        <h2>A <span class="auto-type"></span></h2>
+        <p>Enthusiastic & skilled web developer with expertise in HTML, CSS, JavaScript, MySQL & PHP.
+          Seeking a dynamic role to contribute to innovative web development projects and grow in a collaborative environment.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="#portfolio-section" class="btn">View Projects</a>
+          <a href="./Aditya Revankar Resume.pdf" target="_blank" rel="noopener" class="btn btn-primary">Download CV</a>
+        </div>
+        <div class="social">
+          <a class="social-link" href="https://www.instagram.com/mr_adii_03_official/" target="_blank" rel="noopener">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a class="social-link" href="https://www.linkedin.com/in/adityarevankar98456" target="_blank" rel="noopener">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a class="social-link" href="https://twitter.com/AdityaRevankar4" target="_blank" rel="noopener">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+          <a class="social-link" href="https://t.me/INDWHITEDEVIL" target="_blank" rel="noopener">
+            <i class="fa-brands fa-telegram"></i>
+          </a>
+          <a class="social-link" href="https://github.com/AdityaRevankarDWD" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+      </div>
+      <div class="right">
+        <div class="image">
+          <img src="./profile-pic.png" loading="eager" alt="Portrait of Aditya Revankar" />
+        </div>
+      </div>
+    </section>
 
-    <script>
-        var typed = new Typed(".auto-type", {
-            strings:["Developer", "Gamer", "Creator"],
-            typeSpeed:150,
-            backSpeed:150,
-            loop:true
-        })
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Smooth scrolling for all navigation links
-            var navLinks = document.querySelectorAll('.nav-links ul li a, .btn[href="#portfolio-section"], .btn[href="#achievements-section"]');
-            navLinks.forEach(function(navLink) {
-                navLink.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    var targetSectionId = this.getAttribute('href');
-                    document.querySelector(targetSectionId).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
+    <section class="achievements-section" id="achievements-section">
+      <h2>Achievements</h2>
+      <div class="achievement-cards">
+        <div class="achievement-card">
+          <img src="aditya.jpg" loading="lazy" alt="Receiving best project award" />
+          <h3>Won Best Project Award</h3>
+          <p>Led a team to build a Python encryption & decryption project that won 1st prize at a project showcase.</p>
+        </div>
+        <div class="achievement-card">
+          <img src="aditya2.jpg" loading="lazy" alt="Performer of the month certificate" />
+          <h3>Performer of the Month</h3>
+          <p>Recognized as Performer of the Month (June) at CPIT Dharwad.</p>
+        </div>
+        <div class="achievement-card">
+          <img src="aditya3.jpg" loading="lazy" alt="Internship selection announcement" />
+          <h3>Selected for Internship</h3>
+          <p>Among the first in the batch to secure an internship at KALPAS Innovations Pvt. Ltd.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio-section" class="portfolio-section">
+      <h2>Portfolio</h2>
+      <div class="grid">
+        <div class="project">
+          <img src="project1.png" loading="lazy" alt="Maze Explorer gameplay preview" />
+          <h3>Maze Explorer</h3>
+          <div class="bullets">
+            <p><b>Project Name:</b> Maze Exploration Game</p>
+            <p><b>Team:</b> 4 members • <b>Duration:</b> 1 month</p>
+            <p><b>Tech:</b> HTML, CSS, JavaScript API</p>
+            <p><b>Description:</b> A puzzle maze game designed to strengthen analytical skills and problem-solving. I led the project and core interactions.</p>
+          </div>
+          <div class="project-links">
+            <a href=" https://adityarevankardwd.github.io/MazeExp/" target="_blank" rel="noopener">View Project</a>
+            <a href="https://github.com/AdityaRevankarDWD/MazeExp.git" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+        <div class="project">
+          <img src="project2.png" loading="lazy" alt="Maxx Programming website preview" />
+          <h3>Maxx Programming</h3>
+          <div class="bullets">
+            <p><b>Project Name:</b> Maxx Programming</p>
+            <p><b>Team:</b> 4 members • <b>Duration:</b> 15 days</p>
+            <p><b>Tech:</b> HTML, CSS, JavaScript</p>
+            <p><b>Description:</b> An educational site offering beginner-friendly tutorials and interactive content on programming concepts and languages.</p>
+          </div>
+          <div class="project-links">
+            <a href="https://adityarevankardwd.github.io/MaxxProgramming/" target="_blank" rel="noopener">View Project</a>
+            <a href="https://github.com/AdityaRevankarDWD/MaxxProgramming.git" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+        <div class="project">
+          <img src="encrypt.png" loading="lazy" alt="Encryption & Decryption app preview" />
+          <h3>Encryption and Decryption</h3>
+          <div class="bullets">
+            <p><b>Project Name:</b> Encryption and Decryption</p>
+            <p><b>Team:</b> 5 members • <b>Duration:</b> 10 days</p>
+            <p><b>Tech:</b> Python</p>
+            <p><b>Description:</b> A utility implementing cryptographic techniques to protect sensitive data and ensure confidentiality and integrity.</p>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/AdityaRevankarDWD/Python.git" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Let’s connect</h2>
+      <p>Open to full-stack/front-end roles and remote night-shift support. For opportunities and collaborations:</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a class="btn btn-primary" href="mailto:adityarevankar98456@gmail.com">
+          <i class="fa-solid fa-paper-plane"></i> Email me
+        </a>
+        <a class="btn" href="https://www.linkedin.com/in/adityarevankar98456" target="_blank" rel="noopener">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bottom-navigation">
+    <div class="wrap">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#portfolio-section">Portfolio</a></li>
+        <li><a href="#achievements-section">Achievements</a></li>
+        <li><span style="color:#fff;">Copyright &copy; 2024 Aditya Revankar</span></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+  <script>
+    var typed = new Typed(".auto-type", {
+      strings:["Developer","Gamer","Creator"],
+      typeSpeed: 120, backSpeed: 120, loop:true
+    });
+  </script>
+
+  <script>
+    (function(){
+      const anchorLinks = document.querySelectorAll('a[href^="#"]');
+      anchorLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          const targetId = link.getAttribute('href');
+          if(targetId && targetId.length > 1){
+            const el = document.querySelector(targetId);
+            if(el){
+              e.preventDefault();
+              el.scrollIntoView({behavior:'smooth'});
+            }
+          }
         });
-    </script>
-    
-    
-    
+      });
+
+      const toggle = document.getElementById('navToggle');
+      const drawer = document.getElementById('mobileMenu');
+      const closeTargets = drawer.querySelectorAll('[data-nav-close]');
+
+      function openNav(){
+        toggle.setAttribute('aria-expanded','true');
+        drawer.classList.add('open');
+        const firstLink = drawer.querySelector('a');
+        firstLink && firstLink.focus();
+        document.body.style.overflow = 'hidden';
+      }
+      function closeNav(){
+        toggle.setAttribute('aria-expanded','false');
+        drawer.classList.remove('open');
+        toggle.focus();
+        document.body.style.overflow = '';
+      }
+      toggle.addEventListener('click', () => {
+        const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+        isOpen ? closeNav() : openNav();
+      });
+      closeTargets.forEach(a => a.addEventListener('click', closeNav));
+      document.addEventListener('keydown', (e) => {
+        if(e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true'){ closeNav(); }
+      });
+    })();
+  </script>
 </body>
 </html>
