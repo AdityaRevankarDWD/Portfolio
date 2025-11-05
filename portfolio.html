@@ -1,118 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-
-        .portfolio-section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .project {
-            background-color: #fff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
-            width: 300px;
-            max-width: 100%;
-            padding: 20px;
-        }
-
-        .project img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
-
-        .project h3 {
-            font-size: 20px;
-            margin: 0 0 10px;
-            color: #333;
-        }
-
-        .project p {
-            margin: 0 0 5px;
-            color: #666;
-        }
-
-        .project-links {
-            margin-top: 20px;
-        }
-
-        .project-links a {
-            display: inline-block;
-            text-decoration: none;
-            background-color: #007bff;
-            color: #fff;
-            padding: 8px 15px;
-            border-radius: 5px;
-            margin-right: 10px;
-            transition: background-color 0.3s;
-        }
-
-        .project-links a:hover {
-            background-color: #0056b3;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio</title>
+  <style>
+    :root{
+      --bg:#f4f4f4;
+      --card:#ffffff;
+      --ink:#222;
+      --muted:#666;
+      --primary:#3d5a80;
+      --accent:#ee6c4d;
+      --shadow: rgba(0,0,0,.14) 0 10px 24px -6px;
+    }
+    html,body{margin:0;padding:0;background:var(--bg);font-family:Arial,Helvetica,sans-serif;color:var(--ink)}
+    .wrap{width:min(1200px,92%);margin-inline:auto}
+    .portfolio-section{padding:34px 0 22px}
+    .portfolio-section h2{margin:0 0 16px;text-align:center;font-size:clamp(20px,2.4vw,30px);color:var(--ink)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .project{background:var(--card);border-radius:12px;box-shadow:var(--shadow);padding:14px;display:flex;flex-direction:column}
+    .project img{width:100%;height:210px;object-fit:cover;border-radius:10px}
+    .project h3{font-size:19px;margin:12px 0 6px;color:#333}
+    .project p{color:var(--muted);font-size:15px;margin:4px 0}
+    .project .bullets p{margin:4px 0}
+    .project-links{margin-top:10px;display:flex;flex-wrap:wrap;gap:10px}
+    .project-links a{padding:8px 14px;border-radius:999px;text-decoration:none;font-weight:600;background:var(--primary);color:#e0fbfc;transition:opacity .2s ease,transform .2s ease}
+    .project-links a:hover{opacity:.95;transform:translateY(-1px)}
+    @media (max-width:1024px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:768px){.grid{grid-template-columns:1fr}.project img{height:200px}}
+  </style>
 </head>
 <body>
-    
-<section class="portfolio-section">
-    <div class="project">
-        <img src="project1.png" alt="Project 1">
-        <h3>Maze Explorer</h3>
-        <p><b>Project Name:</b> Maze Exploration Game</p>
-        <p><b>Team:</b> 4 members</p>
-        <p><b>Duration:</b> 1 Month</p>
-        <p><b>Technologies Used:</b> HTML CSS JavaScript API</p>
-        <p><b>Description:</b> Developed a maze exploration game specifically designed to enhance analytical skills in a captivating manner, addressing the concern that many contemporary games lack meaningful problem-solving elements, led by me.</p>
-        <div class="project-links">
-            <a href="#">View Project</a>
-            <a href="#">GitHub</a>
-        </div>
-    </div>
-    <div class="project">
-        <img src="project2.png" alt="Project 2">
-        <h3>Maxx Programming</h3>
-        <p><b>Project Name:</b> Maxx Programming</p>
-        <p><b>Team:</b> 5 members</p>
-        <p><b>Duration:</b> 15 Days</p>
-        <p><b>Technologies Used:</b> HTML CSS JavaScript</p>
-        <p><b>Description:</b> Developed a programming-themed website aimed at providing valuable insights into various programming concepts and languages. The website serves as an educational resource for beginners and enthusiasts, offering tutorials, articles, and interactive content to enhance learning experiences.</p>
-        <div class="project-links">
-            <a href="#">View Project</a>
-            <a href="#">GitHub</a>
-        </div>
-    </div>
-    <div class="project">
-        <img src="project1.png" alt="Project 3">
-        <h3>Encryption And Decryption</h3>
-        <p><b>Project Name:</b> Encryption And Decryption</p>
-        <p><b>Team:</b> 4 members</p>
-        <p><b>Duration:</b> 1 Month</p>
-        <p><b>Technologies Used:</b> HTML CSS JavaScript API</p>
-        <p><b>Description:</b> Developed a secure encryption and decryption application to protect sensitive data from unauthorized access. Utilizing advanced cryptographic algorithms, the application ensures confidentiality and integrity of information, offering users peace of mind in their digital communications.</p>
-        <div class="project-links">
-            <a href="#">View Project</a>
-            <a href="#">GitHub</a>
-        </div>
-    </div>
-    <!-- Add more project containers as needed -->
-</section>
+  <section id="portfolio-section" class="portfolio-section">
+    <div class="wrap">
+      <h2>Portfolio</h2>
+      <div class="grid">
+        <article class="project">
+          <img src="project1.png" loading="lazy" alt="Maze Explorer gameplay preview">
+          <h3>Maze Explorer</h3>
+          <div class="bullets">
+            <p><b>Project Name:</b> Maze Exploration Game</p>
+            <p><b>Team:</b> 4 members • <b>Duration:</b> 1 Month</p>
+            <p><b>Technologies Used:</b> HTML CSS JavaScript API</p>
+            <p><b>Description:</b> Developed a maze exploration game designed to enhance analytical skills and problem-solving, led by me.</p>
+          </div>
+          <div class="project-links">
+            <a href=" https://adityarevankardwd.github.io/MazeExp/" target="_blank" rel="noopener">View Project</a>
+            <a href="https://github.com/AdityaRevankarDWD/MazeExp.git" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
 
+        <article class="project">
+          <img src="project2.png" loading="lazy" alt="Maxx Programming website preview">
+          <h3>Maxx Programming</h3>
+          <div class="bullets">
+            <p><b>Project Name:</b> Maxx Programming</p>
+            <p><b>Team:</b> 5 members • <b>Duration:</b> 15 Days</p>
+            <p><b>Technologies Used:</b> HTML CSS JavaScript</p>
+            <p><b>Description:</b> Programming-themed website offering tutorials, articles, and interactive content for beginners and enthusiasts.</p>
+          </div>
+          <div class="project-links">
+            <a href="https://adityarevankardwd.github.io/MaxxProgramming/" target="_blank" rel="noopener">View Project</a>
+            <a href="https://github.com/AdityaRevankarDWD/MaxxProgramming.git" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
+
+        <article class="project">
+          <img src="project1.png" loading="lazy" alt="Encryption and Decryption app preview">
+          <h3>Encryption And Decryption</h3>
+          <div class="bullets">
+            <p><b>Project Name:</b> Encryption And Decryption</p>
+            <p><b>Team:</b> 4 members • <b>Duration:</b> 1 Month</p>
+            <p><b>Technologies Used:</b> HTML CSS JavaScript API</p>
+            <p><b>Description:</b> Secure application to protect sensitive data using cryptographic techniques, ensuring confidentiality and integrity.</p>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank" rel="noopener">View Project</a>
+            <a href="https://github.com/AdityaRevankarDWD/Python.git" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
